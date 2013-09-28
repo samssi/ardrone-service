@@ -9,7 +9,10 @@ class UdpClient extends Logging {
 
   def execute(command: Command) {
      send(command.commandCode)
-    //println(command.commandCode)
+  }
+
+  def direct(direction: Direction) {
+    send(direction.directionCode)
   }
 
   def send(command: String) {
@@ -19,6 +22,5 @@ class UdpClient extends Logging {
     val packet = new DatagramPacket(b, b.length, host, port)
     socket.send(packet)
     socket.close()
-
   }
 }

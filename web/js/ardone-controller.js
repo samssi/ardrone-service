@@ -17,6 +17,9 @@ function CommandController($scope, $http) {
     function sendCommand(command) {
         $http.get(controllerServlet + command);
     }
+    function sendDirection(direction) {
+        $http.get(controllerServlet + right);
+    }
 
     $scope.up = function() {
         console.log('up')
@@ -26,11 +29,13 @@ function CommandController($scope, $http) {
         console.log('down')
     }
 
-    $scope.left = function() {
+    $scope.yawLeft = function() {
         console.log('left')
+        sendDirection('yawLeft')
     }
-    $scope.right = function() {
+    $scope.yawRight = function() {
         console.log('right')
+        sendDirection('yawRight')
     }
     $scope.emergency = function() {
         console.log('emergency')
