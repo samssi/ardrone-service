@@ -5,6 +5,7 @@ var controller = angular.module('controller', ['ui.utils']);
 
 function CommandController($scope, $http) {
     $scope.takeoff = function() {
+        console.log('t')
         sendCommand("takeoff");
     }
     $scope.land = function() {
@@ -30,6 +31,9 @@ function CommandController($scope, $http) {
     }
     $scope.right = function() {
         console.log('right')
+    }
+    $scope.emergency = function() {
+        console.log('emergency')
     }
 }
 

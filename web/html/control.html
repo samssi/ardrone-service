@@ -9,10 +9,16 @@
 <body>
     <div ng-app="controller">
         <div ng-controller="CommandController">
-            <textarea style="border: 1px solid black; width: 100px; height: 100px;" ui-keypress="{up:'up()', down: 'down()', left:'left()', right:'right()'}"></textarea>
-            <input type="button" value="Takeoff" ng-click="takeoff()">
-            <input type="button" value="Land" ng-click="land()">
-            <input type="button" value="Hover" ng-click="hover()">
+            <div style="width: 400px">
+                <div style="float: left">
+                    <textarea style="border: 1px solid black; width: 100px; height: 100px;" ui-keypress="{up:'up()', down: 'down()', left:'left()', right:'right()', 84: 'takeoff()', esc: 'emergency()'}"></textarea>
+                </div>
+                <div style="float: right">
+                    <input type="button" value="Takeoff" ng-click="takeoff()"><br/>
+                    <input type="button" value="Land" ng-click="land()"><br/>
+                    <input type="button" value="Hover" ng-click="hover()"><br/>
+                </div>
+            </div>
         </div>
     </div>
 </body>
