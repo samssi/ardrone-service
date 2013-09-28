@@ -11,7 +11,7 @@
         <div ng-controller="CommandController">
             <div style="width: 400px">
                 <div style="float: left">
-                    <textarea style="border: 1px solid black; width: 100px; height: 100px;" ui-keypress="{up:'up()', down: 'down()', left:'yawLeft()', right:'yawRight()', 84: 'takeoff()', esc: 'emergency()'}"></textarea>
+                    <textarea style="border: 1px solid black; width: 100px; height: 100px;" ui-keypress="{up:'throttleUp()', down: 'throttleDown()', left:'yawLeft()', right:'yawRight()', 84: 'takeoff()', esc: 'emergency()'}"></textarea>
                 </div>
                 <div style="float: right">
                     <input type="button" value="Takeoff" ng-click="takeoff()"><br/>

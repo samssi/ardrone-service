@@ -21,12 +21,14 @@ function CommandController($scope, $http) {
         $http.get(directionServlet + direction);
     }
 
-    $scope.up = function() {
+    $scope.throttleUp = function() {
         console.log('up')
+        sendDirection('throttleUp')
     }
 
-    $scope.down = function() {
-        console.log('down')
+    $scope.throttleDown = function() {
+        console.log('throttleDown')
+        sendDirection('throttleDown')
     }
 
     $scope.yawLeft = function() {

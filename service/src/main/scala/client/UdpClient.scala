@@ -21,6 +21,15 @@ class UdpClient extends Logging {
     val socket = new DatagramSocket()
     val packet = new DatagramPacket(b, b.length, host, port)
     socket.send(packet)
-    socket.close()
+    socket.close
+  }
+
+  def sendDirection(command: String) {
+    val b = command.getBytes("ASCII")
+    logger.debug("Sending packet containing: [ " + command + " ]")
+    val socket = new DatagramSocket()
+    val packet = new DatagramPacket(b, b.length, host, port)
+    socket.send(packet)
+    socket.close
   }
 }

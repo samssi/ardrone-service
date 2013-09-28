@@ -1,9 +1,6 @@
 package client
 
-/**
-Takeoff: java ARDrone 192.168.1.1 AT*REF=101,290718208
-    Landing: java ARDrone 192.168.1.1 AT*REF=102,290717696
-    Hovering: java ARDrone 192.168.1.1 AT*PCMD=201,1,0,0,0,0
+/*
 Controls:
  gaz 0.1: java ARDrone 192.168.1.1 AT*PCMD=301,1,0,0,1036831949,0
  gaz -0.1: java ARDrone 192.168.1.1 AT*PCMD=302,1,0,0,-1110651699,0
@@ -19,5 +16,18 @@ abstract class Direction {
   def directionCode: String
 }
 
-object YawLeft extends Direction {def directionCode = "AT*PCMD=305,1,0,0,0,1036831949\r"}
-object YawRight extends Direction {def directionCode = "AT*PCMD=306,1,0,0,0,-1110651699\r"}
+object YawLeft extends Direction {
+  def directionCode = "AT*PCMD=" + Sequence.nextValue + ",1,0,0,0,-1110651699\r"
+}
+
+object YawRight extends Direction {
+  def directionCode = "AT*PCMD=" + Sequence.nextValue + ",3,0,0,0,1036831949\r"
+}
+
+object ThrottleUp extends Direction {
+  def directionCode = "AT*PCMD="+ Sequence.nextValue + ",1,0,0,1036831949,0\r"
+}
+
+object ThrottleDown extends Direction {
+  def directionCode = "AT*PCMD="+ Sequence.nextValue + ",1,0,0,-1110651699,0\r"
+}
