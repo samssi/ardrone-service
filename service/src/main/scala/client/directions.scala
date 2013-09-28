@@ -31,3 +31,19 @@ object ThrottleUp extends Direction {
 object ThrottleDown extends Direction {
   def directionCode = "AT*PCMD="+ Sequence.nextValue + ",1,0,0,-1110651699,0\r"
 }
+
+object RollLeft extends Direction {
+  def directionCode = "AT*PCMD=" + Sequence.nextValue + ",1,0,-1110651699,0,0"
+}
+
+object RollRight extends Direction {
+  def directionCode = "AT*PCMD=" + Sequence.nextValue + ",1,0,1036831949,0,0"
+}
+
+object PitchUp extends Direction {
+  def directionCode = "AT*PCMD=" + Sequence.nextValue + ",1,1036831949,0,0,0"
+}
+
+object PitchDown extends Direction {
+  def directionCode = "AT*PCMD=" + Sequence.nextValue + ",1,-1110651699,0,0,0"
+}
