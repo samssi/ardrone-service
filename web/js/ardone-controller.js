@@ -39,6 +39,27 @@ function CommandController($scope, $http) {
         console.log('right')
         sendDirection('yawRight')
     }
+
+    $scope.rollLeft = function() {
+
+        sendDirection('rollLeft')
+    }
+
+    $scope.rollRight = function() {
+
+        sendDirection('rollRight')
+    }
+
+    $scope.pitchUp = function() {
+
+        sendDirection('pitchUp')
+    }
+
+    $scope.pitchDown = function() {
+
+        sendDirection('pitchDown')
+    }
+
     $scope.emergency = function() {
         sendCommand('emergency')
     }

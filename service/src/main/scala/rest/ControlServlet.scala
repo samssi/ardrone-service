@@ -51,6 +51,7 @@ class DirectionServlet extends ScalatraServlet with Logging with CorsSupport {
     logger.info("throttling down")
     udpClient.direct(ThrottleDown)
   }
+
   get("/rollLeft") {
     logger.info("Rolling left")
     udpClient.direct(RollLeft)
