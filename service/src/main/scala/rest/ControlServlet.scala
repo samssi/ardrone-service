@@ -2,7 +2,7 @@ package rest
 
 import org.scalatra.{CorsSupport, ScalatraServlet}
 import general.Logging
-import client.{Hover, Land, Takeoff, UdpClient}
+import client._
 
 
 /**
@@ -38,5 +38,11 @@ class ControlServlet extends ScalatraServlet with Logging with CorsSupport {
     logger.info("Sending hover...")
     udpClient.execute(Hover)
     "Sent hover"
+  }
+
+  get("/emergency") {
+    logger.info("Emergency!!! Shutting down!!!")
+    udpClient.execute(Reset)
+    "Sent reset"
   }
 }
