@@ -1,5 +1,7 @@
-var controllerServlet = "http://localhost:8080/control/"
-var controller = angular.module('controller', []);
+var url = "http://localhost:8080/";
+var controllerServlet = url + "control/";
+var directionServlet = url + "direction/";
+var controller = angular.module('controller', ['ui.utils']);
 
 function CommandController($scope, $http) {
     $scope.takeoff = function() {
@@ -13,6 +15,21 @@ function CommandController($scope, $http) {
     }
     function sendCommand(command) {
         $http.get(controllerServlet + command);
+    }
+
+    $scope.up = function() {
+        console.log('up')
+    }
+
+    $scope.down = function() {
+        console.log('down')
+    }
+
+    $scope.left = function() {
+        console.log('left')
+    }
+    $scope.right = function() {
+        console.log('right')
     }
 }
 

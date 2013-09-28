@@ -4,10 +4,12 @@
     <title>ArDrone Controller</title>
     <script type="text/javascript" src="../js/angular.js"></script>
     <script type="text/javascript" src="../js/ardone-controller.js"></script>
+    <script type="text/javascript" src="../js/ui-utils.js"></script>
 </head>
 <body>
     <div ng-app="controller">
         <div ng-controller="CommandController">
+            <textarea style="border: 1px solid black; width: 100px; height: 100px;" ui-keypress="{up:'up()', down: 'down()', left:'left()', right:'right()'}"></textarea>
             <input type="button" value="Takeoff" ng-click="takeoff()">
             <input type="button" value="Land" ng-click="land()">
             <input type="button" value="Hover" ng-click="hover()">
