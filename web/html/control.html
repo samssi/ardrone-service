@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ArDrone Controller</title>
+    <script type="text/javascript" src="../js/angular.js"></script>
+    <script type="text/javascript" src="../js/ardone-controller.js"></script>
+</head>
+<body>
+    <div ng-app="controller">
+        <div ng-controller="CommandController">
+            <input type="button" value="Takeoff" ng-click="takeoff()">
+            <input type="button" value="Land" ng-click="land()">
+            <input type="button" value="Hover" ng-click="hover()">
+        </div>
+    </div>
+</body>
+</html>
